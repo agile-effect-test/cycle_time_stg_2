@@ -1,15 +1,16 @@
-name: workflow_2
+name: workflow_test
+
 on:
-  push:
-    branches:
-      - main
+  workflow_dispatch:
+  
 
 jobs:
-  my-job:
+  build:
     runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
 
-      - name: Run a one-line script
-        run: echo "Hello, world!"
+    steps:
+      - name: チェックアウトリポジトリ
+        uses: actions/checkout@v2
+
+      - name: ワークフロー完了
+        run: echo "ワークフロー完了"
